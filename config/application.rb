@@ -21,5 +21,6 @@ module BaukisDemo
       g.test_framework :rspec
       g.controller_specs false
       g.view_speces false
+    end
   end
 end
