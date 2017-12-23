@@ -62,6 +62,7 @@ gem 'bcrypt'
 gem 'nokogiri'
 # 翻訳のため
 gem 'rails-i18n'
+gem 'slim'
 
 group :test do
   gem 'rspec-rails', '~> 3.6'
