@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'spec_helper'
 
 describe Staff::Authenticator do
   describe "#authenticate" do
