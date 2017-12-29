@@ -1,5 +1,6 @@
 class Staff::Base < ApplicationController
   before_action :authorize
+  before_action :check_account
 
   private
   def current_staff_member
@@ -15,5 +16,12 @@ class Staff::Base < ApplicationController
       flash.alert = '職員としてログインをして下さい。'
       redirect_to :staff_login
     end
+  end
+
+  def check_account
+    if current_staff_member && !current_staff_member.active?
+      session.delete(:staff_member_id)
+      flash.alert = 'アカウントが無効になりました。'
+      redirect_to :staff_root
   end
 end
