@@ -22,6 +22,6 @@ module BaukisDemo
       g.controller_specs false
       g.view_speces false
     end
-    config.action_controller.permit_all_parameters = true
+    # config.action_controller.permit_all_parameters = true
   end
 end
