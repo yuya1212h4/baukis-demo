@@ -1,6 +1,12 @@
 require 'spec_helper'
 
 describe Staff::AccountsController do
+  context 'ログイン前' do
+    it_behaves_like 'a protected singular staff controller'
+  end
+end
+
+describe Staff::AccountsController do
   describe "#update" do
     let(:params_hash){ attributes_for(:staff_member) }
     let(:staff_member){ create(:staff_member) }
