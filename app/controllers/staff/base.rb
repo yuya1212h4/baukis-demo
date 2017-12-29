@@ -24,6 +24,7 @@ class Staff::Base < ApplicationController
       session.delete(:staff_member_id)
       flash.alert = 'アカウントが無効になりました。'
       redirect_to :staff_root
+    end
   end
 
   TIMEOUT = 60.minutes
