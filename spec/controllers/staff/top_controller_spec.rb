@@ -25,7 +25,7 @@ describe Staff::TopController, 'ログイン後' do
       session[:last_access_time] =
         Staff::Base::TIMEOUT.ago.advance(seconds: -1)
       get :index
-      expect(session[:last_access_id]).to be_nil
+      expect(session[:staff_member_id]).to be_nil
       expect(response).to redirect_to(staff_login_url)
     end
   end
