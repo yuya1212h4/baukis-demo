@@ -17,7 +17,7 @@ describe Admin::TopController, 'ログイン後' do
     example '停止フラグがセットされたら強制的にログアウト' do
       administrator.update_column(:suspended, true)
       get :index
-      expect(session[:administrator]).to be_nil
+      expect(session[:administrator_id]).to be_nil
       expect(response).to redirect_to(admin_root_url)
     end
 
@@ -25,7 +25,7 @@ describe Admin::TopController, 'ログイン後' do
       session[:last_access_time] =
         Admin::Base::TIMEOUT.ago.advance(seconds: -1)
       get :index
-      expect(session[:last_access_id]).to be_nil
+      expect(session[:administrator_id]).to be_nil
       expect(response).to redirect_to(admin_login_url)
     end
   end
