@@ -1,6 +1,6 @@
 class Admin::SessionsController < Admin::Base
   skip_before_action :authorize
-  
+
   def new
     if current_administrator
       redirect_to :admin_root
@@ -17,10 +17,11 @@ class Admin::SessionsController < Admin::Base
     end
     if Admin::Authenticator.new(administrator).authenticate(@form.password)
       if administrator.suspended?
-        flash.new.alert = 'アカウントが停止されています。'
+        flash.now.alert = 'アカウントが停止されています。'
         render acion: 'new'
       else
         session[:administrator_id] = administrator.id
+        session[:last_access_time] = Time.current
         flash.notice = 'ログインしました。'
         redirect_to :admin_root
       end
