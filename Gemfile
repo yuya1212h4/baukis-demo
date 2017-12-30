@@ -66,6 +66,8 @@ gem 'nokogiri'
 gem 'rails-i18n'
 gem 'slim'
 gem 'kaminari'
+gem 'date_validator'
+gem 'email_validator'
 
 group :test do
   gem 'rspec-rails', '~> 3.6'
