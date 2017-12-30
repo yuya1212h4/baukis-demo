@@ -63,6 +63,7 @@ gem 'nokogiri'
 # 翻訳のため
 gem 'rails-i18n'
 gem 'slim'
+gem 'kaminari'
 
 group :test do
   gem 'rspec-rails', '~> 3.6'
