@@ -4,7 +4,7 @@
 div#wrapper {
   div#container {
     div#generic-form {
-      width: 400px;
+      width: 480px;
       margin: $very_wide auto;
       padding: $very_wide;
       border-radius: $wide;
@@ -25,28 +25,33 @@ div#wrapper {
           }
           input[type='checkbox']+label { display: inline-block }
           input[type='radio']+label { display: inline-block }
+        }
+        div.input-block {
+          input { margin-right: $narrow * 2; }
+        }
+        div.notes {
+          text-align: right;
+          font-size: $small;
+          span.mark { color: $red }
+        }
+        div.buttons {
+          text-align: center;
+          input[type='submit'] {
+            padding: $wide $very_wide;
           }
-          div.input-block {
-            input { margin-right: $narrow * 2; }
-          }
-          div.notes {
-            text-align: right;
-            font-size: $small;
-            span.mark { color: $red }
-          }
-          div.buttons {
-            text-align: center;
-            input[type='submit'] {
-              padding: $wide $wide * 2;
-            }
-            div.field_with_errors {
-              display: inline;
-              padding: 0;
-              label { color: $red; }
-              input { background-color: $pink; }
-            }
-          }
+        }
+        div.field_with_errors {
+          display: inline;
+          padding: 0;
+          label { color: $red; }
+          input { background-color: $pink; }
+        }
+        div.error-message {
+          color: $red;
+          font-size: $small;
+          padding: 0 $very_wide;
         }
       }
     }
   }
+}
