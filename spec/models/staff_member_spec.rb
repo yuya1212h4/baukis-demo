@@ -49,6 +49,16 @@ describe StaffMember do
       expect(member).not_to be_valid
     end
 
+    example '記号を含んでいるfamily_nameは無効' do
+      member = build(:staff_member, family_name: 'test@')
+      expect(member).not_to be_valid
+    end
+
+    example '記号を含んでいるgiven_nameは無効' do
+      member = build(:staff_member, given_name: 'test@')
+      expect(member).not_to be_valid
+    end
+
     example '漢字を含むfamily_name_kanaは無効' do
       member = build(:staff_member, family_name_kana: '試験')
       expect(member).not_to be_valid
