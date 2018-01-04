@@ -69,6 +69,7 @@ gem 'kaminari'
 gem 'date_validator'
 gem 'email_validator'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 group :test do
   gem 'rspec-rails', '~> 3.6'
